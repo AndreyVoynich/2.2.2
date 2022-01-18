@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <title>Cars</title>
+
+    <style>
+        table {
+            width: 100%;
+            background: white;
+            color: black;
+            border-spacing: 1px;
+        }
+        td, th {
+            background: whitesmoke; /* Цвет фона ячеек */
+            padding: 5px; /* Поля вокруг текста */
+        }
+    </style>
+
+
+</head>
+<body>
+    View cars
+    <table>
+    <tr>
+        <th>Model</th>
+        <th>Series</th>
+        <th>Color</th>
+    </tr>
+
+    <tr th:each="car : ${cars}">
+        <td><span th:text="${car.getModel()}"></span></td>
+        <td><span th:text="${car.getSeries()}"></span></td>
+        <td><span th:text="${car.getColor()}"></span></td>
+    </tr>
+
+</table>
+
+</body>
+
+</html>
